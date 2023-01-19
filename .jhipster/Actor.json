@@ -1,0 +1,35 @@
+{
+  "changelogDate": "20230119200228",
+  "dto": "no",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "40",
+      "fieldValidateRulesMinlength": "3"
+    },
+    {
+      "fieldName": "apellidos",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fechaNacimiento",
+      "fieldType": "Instant"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Actor",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "pelicula",
+      "otherEntityRelationshipName": "actor",
+      "ownerSide": false,
+      "relationshipName": "pelicula",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

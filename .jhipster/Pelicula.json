@@ -1,0 +1,63 @@
+{
+  "changelogDate": "20230113202040",
+  "dto": "no",
+  "fields": [
+    {
+      "fieldName": "titulo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "50",
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "fechaEstreno",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "500",
+      "fieldValidateRulesMinlength": "20"
+    },
+    {
+      "fieldName": "enCines",
+      "fieldType": "Boolean"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Pelicula",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "estreno",
+      "otherEntityRelationshipName": "pelicula",
+      "ownerSide": false,
+      "relationshipName": "estreno",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityField": "nombre",
+      "otherEntityName": "director",
+      "relationshipName": "director",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "nombre",
+      "otherEntityName": "actor",
+      "otherEntityRelationshipName": "pelicula",
+      "ownerSide": true,
+      "relationshipName": "actor",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "cine",
+      "otherEntityRelationshipName": "pelicula",
+      "ownerSide": false,
+      "relationshipName": "cine",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

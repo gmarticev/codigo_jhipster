@@ -1,0 +1,43 @@
+{
+  "changelogDate": "20230119202810",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "50",
+      "fieldValidateRulesMinlength": "5"
+    },
+    {
+      "fieldName": "direccion",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "500",
+      "fieldValidateRulesMinlength": "20"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Cine",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "titulo",
+      "otherEntityName": "pelicula",
+      "otherEntityRelationshipName": "cine",
+      "ownerSide": true,
+      "relationshipName": "pelicula",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityField": "titulo",
+      "otherEntityName": "pelicula",
+      "otherEntityRelationshipName": "cine",
+      "ownerSide": true,
+      "relationshipName": "pelicula",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}
